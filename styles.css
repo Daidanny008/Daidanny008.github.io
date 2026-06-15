@@ -2,6 +2,7 @@
 :root {
     --accent: #4F46E5;
     --accent-hover: #4338CA;
+    --accent-subtle: rgba(79, 70, 229, 0.12);
     --bg: #FFFFFF;
     --bg-alt: #F8FAFC;
     --text: #1E293B;
@@ -250,7 +251,7 @@ header {
     display: inline-block;
     font-size: 0.72rem;
     font-weight: 600;
-    background: color-mix(in srgb, var(--accent) 12%, transparent);
+    background: var(--accent-subtle);
     color: var(--accent);
     padding: 2px 8px;
     border-radius: 4px;
@@ -348,6 +349,8 @@ header {
 
 .timeline-location {
     font-size: 0.78rem;
+    font-style: normal;
+    font-weight: 400;
     color: var(--text-muted);
 }
 
@@ -389,7 +392,7 @@ header {
     display: inline-block;
     font-size: 0.72rem;
     font-weight: 600;
-    background: color-mix(in srgb, var(--accent) 12%, transparent);
+    background: var(--accent-subtle);
     color: var(--accent);
     padding: 2px 8px;
     border-radius: 4px;
