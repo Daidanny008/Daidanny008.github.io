@@ -1,99 +1,309 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Game Dev Portfolio</title>
+    <title>Danny Dai | Software Engineering</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+
     <header>
-        <div class="container">
-            <h1>Game Developer Portfolio</h1>
-            <nav>
+        <div class="container nav-container">
+            <a href="#hero" class="logo">Danny Dai</a>
+            <nav id="main-nav">
                 <ul>
                     <li><a href="#about">About</a></li>
+                    <li><a href="#experience">Experience</a></li>
                     <li><a href="#projects">Projects</a></li>
+                    <li><a href="#education">Education</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
+            <div class="nav-actions">
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
         </div>
     </header>
 
-    <section id="about" class="section">
+    <section id="hero">
+        <div class="container hero-container">
+            <p class="hero-eyebrow">Hi, I'm</p>
+            <h1>Danny Dai</h1>
+            <h2>Software Engineering Student &amp; Co-op Developer</h2>
+            <p class="hero-sub">McMaster Software Engineering Level III &middot; AI tools &middot; Full-stack &middot; Open source</p>
+            <div class="hero-actions">
+                <a href="#projects" class="btn btn-primary">View Projects</a>
+                <a href="#contact" class="btn btn-outline">Contact Me</a>
+            </div>
+            <div class="hero-socials">
+                <a href="https://github.com/Daidanny008" target="_blank" rel="noopener" aria-label="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://linkedin.com/in/danny-dai" target="_blank" rel="noopener" aria-label="LinkedIn">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="mailto:daidanny009@gmail.com" aria-label="Email">
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="about">
         <div class="container">
-            <div class="about-content">
-                <div class="about-img">
-                    <img src="images/profile.jpg" alt="Profile Photo">
+            <h2 class="section-title">About Me</h2>
+            <p class="about-bio">I'm a Software Engineering student at McMaster University with a passion for AI tooling, full-stack development, and open source. I enjoy building practical tools — from AI agent infrastructure to accessibility hardware — and learning through shipping real products at co-op.</p>
+            <div class="skills-grid">
+                <div class="skill-group">
+                    <h3>Languages</h3>
+                    <ul>
+                        <li>Python</li>
+                        <li>Java</li>
+                        <li>JavaScript</li>
+                        <li>C</li>
+                        <li>SQL</li>
+                        <li>Bash</li>
+                        <li>HTML / CSS</li>
+                        <li>MATLAB</li>
+                        <li>R</li>
+                    </ul>
                 </div>
-                <div class="about-text">
-                    <h2>About Me</h2>
-                    <p>Hello! I'm a passionate game developer with experience in Java (JavaFX/Swing) and Python (Pygame). I love creating interactive experiences and solving complex problems through code.</p>
-                    <div class="skills">
-                        <h3>Skills</h3>
-                        <ul>
-                            <li>Java (JavaFX, Swing)</li>
-                            <li>Python (Pygame)</li>
-                            <li>JavaScript/HTML5 Games</li>
-                            <li>Game Design</li>
-                        </ul>
-                    </div>
+                <div class="skill-group">
+                    <h3>Frameworks &amp; Tools</h3>
+                    <ul>
+                        <li>React</li>
+                        <li>Flask</li>
+                        <li>Pydantic AI</li>
+                        <li>Supabase</li>
+                        <li>Git</li>
+                        <li>Maven</li>
+                        <li>GitHub Actions</li>
+                    </ul>
+                </div>
+                <div class="skill-group">
+                    <h3>Other</h3>
+                    <ul>
+                        <li>Linux</li>
+                        <li>OpenAI Whisper</li>
+                        <li>Ollama</li>
+                        <li>Google Cloud APIs</li>
+                        <li>Arduino</li>
+                        <li>CAD / 3D Printing</li>
+                    </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="projects" class="section dark">
+    <section id="experience" class="section-alt">
         <div class="container">
-            <h2>My Projects</h2>
+            <h2 class="section-title">Experience</h2>
+            <div class="timeline">
+
+                <div class="timeline-item">
+                    <div class="timeline-header">
+                        <div>
+                            <h3>Software Engineering Intern</h3>
+                            <h4>Dosu <span class="badge">Co-op</span></h4>
+                        </div>
+                        <span class="timeline-date">2025</span>
+                    </div>
+                    <ul class="timeline-bullets">
+                        <li>Refactored ChatCompletion agents to Pydantic AI with newer model choices</li>
+                        <li>Built stale issue bot using GitHub Agentic Workflows (Markdown)</li>
+                        <li>Analyzed negative user feedback via Supabase; summarized findings for CEO</li>
+                        <li>Resolved Sentry alerts, maintained Chinese UI frontend, created git tags lookup tool for AI agent</li>
+                        <li class="stat-line"><strong>79 merged PRs &middot; 14,717 lines added &middot; 21,947 lines deleted</strong></li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-header">
+                        <div>
+                            <h3>Software Developer</h3>
+                            <h4>Let's Get Together</h4>
+                        </div>
+                        <span class="timeline-date">Jul – Aug 2024</span>
+                    </div>
+                    <ul class="timeline-bullets">
+                        <li>Built a React sub-page with an interactive QGIS map in JavaScript/HTML/CSS</li>
+                        <li>Collaborated across team, stakeholder, and MP meetings on a donor-tracking web portal</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-header">
+                        <div>
+                            <h3>Digital Literacy Coordinator</h3>
+                            <h4>Let's Get Together</h4>
+                        </div>
+                        <span class="timeline-date">Jun – Aug 2023</span>
+                    </div>
+                    <ul class="timeline-bullets">
+                        <li>Developed and delivered Mandarin-language tech literacy sessions for senior community members</li>
+                        <li>Coordinated youth volunteers at multiple tech-collect drives across the Peel region</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <div class="container">
+            <h2 class="section-title">Projects</h2>
             <div class="projects-grid">
+
                 <div class="project-card">
-                    <h3>Java Platformer</h3>
-                    <p>A 2D platformer game built with JavaFX</p>
-                    <a href="projects/game1" class="btn">View Project</a>
+                    <div class="project-header">
+                        <h3>SwiftHealth</h3>
+                        <a href="https://github.com/Daidanny008/SwiftHealth" target="_blank" rel="noopener" class="project-link" aria-label="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                    <p>Audio transcription and translation app. Explored Gemini API, then switched to OpenAI Whisper + Ollama for local, privacy-first processing.</p>
+                    <div class="tech-tags">
+                        <span>Python</span>
+                        <span>Whisper</span>
+                        <span>Ollama</span>
+                    </div>
                 </div>
+
                 <div class="project-card">
-                    <h3>Pygame Adventure</h3>
-                    <p>Top-down adventure game made with Pygame</p>
-                    <a href="projects/game2" class="btn">View Project</a>
+                    <div class="project-header">
+                        <h3>PantryLens AI</h3>
+                        <a href="https://github.com/Daidanny008/PantryLens-AI" target="_blank" rel="noopener" class="project-link" aria-label="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                    <p>Hackathon project — receipt OCR using Google Cloud Vision API with Gemini API for recipe and pantry suggestions. Presented at Google Developers Mac-a-thon.</p>
+                    <div class="tech-tags">
+                        <span>Python</span>
+                        <span>Flask</span>
+                        <span>Google Cloud</span>
+                        <span>JavaScript</span>
+                    </div>
                 </div>
+
                 <div class="project-card">
-                    <h3>HTML5 Game</h3>
-                    <p>Browser-based game using JavaScript</p>
-                    <a href="#" class="btn">Coming Soon</a>
+                    <div class="project-header">
+                        <h3>Wheelchair Storage Device</h3>
+                    </div>
+                    <p>Fully motorized storage hanger for wheelchair users. Designed with CAD, fabricated with 3D printing and laser cutting, and controlled with Arduino motor programming.</p>
+                    <div class="tech-tags">
+                        <span>Arduino</span>
+                        <span>CAD</span>
+                        <span>3D Printing</span>
+                        <span>Laser Cutting</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>Elves' Adventure</h3>
+                        <a href="https://github.com/Daidanny008/Elves-Adventure" target="_blank" rel="noopener" class="project-link" aria-label="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                    <p>Graphical archery RPG with auto-updating inventory, currency, and weapon systems. Multiple character and map selections, built for Gr.12 culminating.</p>
+                    <div class="tech-tags">
+                        <span>Java</span>
+                        <span>JavaFX</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>Road to JunZi</h3>
+                        <a href="https://github.com/Daidanny008/RoadToJunZi" target="_blank" rel="noopener" class="project-link" aria-label="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                    <p>Suite of six minigames in a linear story — piano tiles, endless shooter, trivia, cavalry game with GIF animation, and more. Built for Gr.11 culminating.</p>
+                    <div class="tech-tags">
+                        <span>Java</span>
+                        <span>Swing</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="education" class="section-alt">
+        <div class="container">
+            <h2 class="section-title">Education</h2>
+            <div class="education-card">
+                <div class="education-header">
+                    <div>
+                        <h3>McMaster University</h3>
+                        <h4>B.Eng. Software Engineering (Co-op)</h4>
+                        <p class="education-meta">2023 – 2029</p>
+                    </div>
+                    <div class="education-gpa">
+                        <p class="gpa-number">10.6<span>/12</span></p>
+                        <p class="gpa-label">GPA</p>
+                    </div>
+                </div>
+                <div class="honor-badges">
+                    <span class="badge">Dean's Honour List</span>
+                    <span class="badge">Engineering Award of Excellence</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="contact" class="section">
-        <div class="container">
-            <h2>Get In Touch</h2>
-            <div class="contact-content">
-                <div class="contact-info">
-                    <p><i class="fas fa-envelope"></i> your.email@example.com</p>
-                    <div class="social-links">
-                        <a href="https://github.com/yourusername" target="_blank"><i class="fab fa-github"></i></a>
-                        <a href="https://linkedin.com/in/yourprofile" target="_blank"><i class="fab fa-linkedin"></i></a>
-                        <a href="https://twitter.com/yourhandle" target="_blank"><i class="fab fa-twitter"></i></a>
-                    </div>
-                </div>
-                <form id="contact-form" class="contact-form">
-                    <input type="text" placeholder="Your Name" required>
-                    <input type="email" placeholder="Your Email" required>
-                    <textarea placeholder="Your Message" required></textarea>
-                    <button type="submit" class="btn">Send Message</button>
-                </form>
+    <section id="contact">
+        <div class="container contact-container">
+            <h2 class="section-title">Get In Touch</h2>
+            <p class="contact-sub">Open to internships, co-op opportunities, and interesting conversations.</p>
+            <div class="contact-links">
+                <a href="mailto:daidanny009@gmail.com" class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>daidanny009@gmail.com</span>
+                </a>
+                <a href="https://linkedin.com/in/danny-dai" target="_blank" rel="noopener" class="contact-item">
+                    <i class="fab fa-linkedin"></i>
+                    <span>linkedin.com/in/danny-dai</span>
+                </a>
+                <a href="https://github.com/Daidanny008" target="_blank" rel="noopener" class="contact-item">
+                    <i class="fab fa-github"></i>
+                    <span>github.com/Daidanny008</span>
+                </a>
             </div>
         </div>
     </section>
 
     <footer>
         <div class="container">
-            <p>&copy; 2023 Your Name. All rights reserved.</p>
+            <p>&copy; <span id="current-year"></span> Danny Dai</p>
         </div>
     </footer>
+
+    <div class="mobile-nav-overlay" id="mobile-nav-overlay">
+        <button class="close-overlay" id="close-overlay" aria-label="Close menu">
+            <i class="fas fa-times"></i>
+        </button>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
 
     <script src="script.js"></script>
 </body>

@@ -1,52 +1,58 @@
-// Smooth scrolling for navigation links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
-        });
-    });
+// Footer year
+document.getElementById('current-year').textContent = new Date().getFullYear();
+
+// Dark mode toggle
+const themeToggle = document.getElementById('theme-toggle');
+const html = document.documentElement;
+const savedTheme = localStorage.getItem('theme') || 'light';
+html.setAttribute('data-theme', savedTheme);
+updateToggleIcon(savedTheme);
+
+themeToggle.addEventListener('click', () => {
+    const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    html.setAttribute('data-theme', next);
+    localStorage.setItem('theme', next);
+    updateToggleIcon(next);
 });
 
-// Form submission handling
-const contactForm = document.getElementById('contact-form');
-if (contactForm) {
-    contactForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        // Get form values
-        const name = this.elements[0].value;
-        const email = this.elements[1].value;
-        const message = this.elements[2].value;
-        
-        // Here you would typically send the data to a server
-        console.log('Form submitted:', { name, email, message });
-        
-        // Show success message
-        alert('Thank you for your message! I will get back to you soon.');
-        this.reset();
-    });
+function updateToggleIcon(theme) {
+    themeToggle.querySelector('i').className = theme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
 }
 
-// Sticky header on scroll
-window.addEventListener('scroll', function() {
-    const header = document.querySelector('header');
-    if (window.scrollY > 100) {
-        header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.2)';
-    } else {
-        header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
-    }
+// Mobile nav overlay
+const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+const closeOverlay = document.getElementById('close-overlay');
+const overlay = document.getElementById('mobile-nav-overlay');
+
+mobileMenuBtn.addEventListener('click', () => overlay.classList.add('open'));
+closeOverlay.addEventListener('click', () => overlay.classList.remove('open'));
+overlay.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => overlay.classList.remove('open'));
 });
 
-// Project card animations
-const projectCards = document.querySelectorAll('.project-card');
-projectCards.forEach(card => {
-    card.addEventListener('mouseenter', function() {
-        this.style.boxShadow = '0 10px 25px rgba(0, 0, 0, 0.15)';
+// Active nav highlight on scroll
+const sections = document.querySelectorAll('section[id]');
+const navLinks = document.querySelectorAll('#main-nav a');
+
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            navLinks.forEach(link => {
+                link.classList.toggle('active', link.getAttribute('href') === '#' + entry.target.id);
+            });
+        }
     });
-    
-    card.addEventListener('mouseleave', function() {
-        this.style.boxShadow = '0 5px 15px rgba(0, 0, 0, 0.1)';
+}, { rootMargin: '-40% 0px -55% 0px' });
+
+sections.forEach(section => observer.observe(section));
+
+// Smooth scroll for hash links
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+        const target = document.querySelector(a.getAttribute('href'));
+        if (target) {
+            e.preventDefault();
+            target.scrollIntoView({ behavior: 'smooth' });
+        }
     });
 });
