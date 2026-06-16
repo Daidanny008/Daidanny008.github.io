@@ -51,14 +51,14 @@ img { max-width: 100%; display: block; }
     padding: 0 20px;
 }
 
-section { padding: 96px 0; }
+section { padding: 120px 0; }
 
 .section-alt { background: var(--bg-alt); }
 
 .section-title {
     font-size: clamp(1.5rem, 3vw, 1.9rem);
     font-weight: 700;
-    margin-bottom: 48px;
+    margin-bottom: 60px;
     color: var(--text);
 }
 
@@ -296,7 +296,7 @@ header {
 .timeline {
     display: flex;
     flex-direction: column;
-    gap: 44px;
+    gap: 64px;
 }
 
 .timeline-item {
@@ -321,7 +321,7 @@ header {
     justify-content: space-between;
     align-items: flex-start;
     gap: 16px;
-    margin-bottom: 14px;
+    margin-bottom: 20px;
 }
 
 .timeline-item h3 {
@@ -365,7 +365,7 @@ header {
 .timeline-bullets {
     display: flex;
     flex-direction: column;
-    gap: 9px;
+    gap: 14px;
 }
 
 .timeline-bullets li {
@@ -404,7 +404,7 @@ header {
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
+    gap: 28px;
 }
 
 .project-card {
@@ -416,7 +416,7 @@ header {
     transition: box-shadow 0.2s, transform 0.2s;
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 16px;
 }
 
 .project-card:hover {
@@ -431,13 +431,18 @@ header {
     overflow: hidden;
     flex-shrink: 0;
     line-height: 0;
+    background: var(--bg-alt);
+    aspect-ratio: 4 / 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .project-img {
     width: 100%;
     max-width: none;
-    height: 180px;
-    object-fit: cover;
+    height: 100%;
+    object-fit: contain;
     display: block;
 }
 
