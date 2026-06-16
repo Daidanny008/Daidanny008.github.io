@@ -425,6 +425,7 @@ header {
 }
 
 .project-img-wrap {
+    width: calc(100% + 56px);
     margin: -28px -28px 0;
     border-radius: var(--radius) var(--radius) 0 0;
     overflow: hidden;
