@@ -424,12 +424,19 @@ header {
     transform: translateY(-3px);
 }
 
-.project-img {
-    width: calc(100% + 56px);
+.project-img-wrap {
     margin: -28px -28px 0;
+    border-radius: var(--radius) var(--radius) 0 0;
+    overflow: hidden;
+    flex-shrink: 0;
+    line-height: 0;
+}
+
+.project-img {
+    width: 100%;
+    max-width: none;
     height: 180px;
     object-fit: cover;
-    border-radius: var(--radius) var(--radius) 0 0;
     display: block;
 }
 
