@@ -424,6 +424,15 @@ header {
     transform: translateY(-3px);
 }
 
+.project-img {
+    width: calc(100% + 56px);
+    margin: -28px -28px 0;
+    height: 180px;
+    object-fit: cover;
+    border-radius: var(--radius) var(--radius) 0 0;
+    display: block;
+}
+
 .project-header {
     display: flex;
     justify-content: space-between;
