@@ -3,6 +3,7 @@
     --accent: #4F46E5;
     --accent-hover: #4338CA;
     --accent-subtle: rgba(79, 70, 229, 0.12);
+    --accent-link: var(--accent);
     --bg: #FFFFFF;
     --bg-alt: #F8FAFC;
     --text: #1E293B;
@@ -15,6 +16,7 @@
 }
 
 [data-theme="dark"] {
+    --accent-link: #818CF8;
     --bg: #0F172A;
     --bg-alt: #1E293B;
     --text: #F1F5F9;
@@ -382,6 +384,14 @@ header {
     left: 0;
     color: var(--accent);
 }
+
+.timeline-bullets a {
+    color: var(--accent-link);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+.timeline-bullets a:hover { color: var(--accent-hover); }
 
 .stat-line {
     color: var(--text) !important;
